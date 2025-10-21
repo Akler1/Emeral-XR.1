@@ -1,0 +1,10 @@
+{
+    "horizontalFrames": 30,
+    "horizontalStartingIndex": 15,
+    "horizontalWrap": true,
+    "name": "Emeral XR.1",
+    "type": "KeyShotXR",
+    "verticalFrames": 15,
+    "verticalStartingIndex": 8,
+    "verticalWrap": false
+}
