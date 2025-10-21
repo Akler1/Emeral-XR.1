@@ -1,57 +1,37 @@
-<!--
-  KeyShotXR
-  (c) Copyright 2012-2017 Luxion ApS - All Rights Reserved.
--->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KeyShotXR</title>
-    <style>body { margin:0; -ms-touch-action:none; }</style>
+    <style>body{margin:0;background:#fff;-ms-touch-action:none}</style>
 
-    <!-- Load the viewer script from your XR folder -->
+    <!-- Load the viewer script from the XR folder that contains files/ + images -->
     <script src="Emeral XR.1/files/KeyShotXR.js"></script>
 
-    <!-- KeyShotXR configuration -->
+    <!-- XR config MUST be inside this script tag -->
     <script>
       var keyshotXR;
-
       function initKeyShotXR() {
         var nameOfDiv = "KeyShotXR";
+        var folderName = "Emeral XR.1";   // EXACT folder name with your images
 
-        /* This MUST match the folder that contains your frames + ks_logo.png + files/ */
-        var folderName = "Emeral XR.1";
-
-        var viewPortWidth = 1024;
-        var viewPortHeight = 1024;
-        var backgroundColor = "#000000";   // change to "#ffffff" if you want white
-        var uCount = 30;
-        var vCount = 15;
-        var uWrap = true;
-        var vWrap = false;
-        var uMouseSensitivity = -0.0833333;
-        var vMouseSensitivity = 0.09375;
-        var uStartIndex = 15;
-        var vStartIndex = 8;
-        var minZoom = 1;
-        var maxZoom = 1;                   // set to 1.5 to enable zoom
+        var viewPortWidth = 1024, viewPortHeight = 1024;
+        var backgroundColor = "#000000";  // change to "#ffffff" if you want white
+        var uCount = 30, vCount = 15;
+        var uWrap = true, vWrap = false;
+        var uMouseSensitivity = -0.0833333, vMouseSensitivity = 0.09375;
+        var uStartIndex = 15, vStartIndex = 8;
+        var minZoom = 1, maxZoom = 1;     // set maxZoom=1.5 to allow zoom
         var rotationDamping = 0.96;
-        var downScaleToBrowser = true;
-        var addDownScaleGUIButton = false;
+        var downScaleToBrowser = true, addDownScaleGUIButton = false;
         var downloadOnInteraction = false;
         var imageExtension = "jpg";
         var showLoading = true;
-
-        /* Use default loader (empty string) or point to the icon inside your folder */
-        var loadingIcon = ""; // or "Emeral XR.1/ks_logo.png"
-
-        var allowFullscreen = true; // double-click for fullscreen on desktop
-        var uReverse = false;
-        var vReverse = false;
-        var hotspots = {};
-        var isIBooksWidget = false;
+        var loadingIcon = "";             // or "Emeral XR.1/ks_logo.png"
+        var allowFullscreen = true;
+        var uReverse = false, vReverse = false;
+        var hotspots = {}, isIBooksWidget = false;
 
         keyshotXR = new keyshotXR(
           nameOfDiv, folderName, viewPortWidth, viewPortHeight, backgroundColor,
@@ -62,7 +42,6 @@
           uReverse, vReverse, hotspots, isIBooksWidget
         );
       }
-
       window.onload = initKeyShotXR;
     </script>
   </head>
