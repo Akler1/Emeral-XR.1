@@ -2,7 +2,6 @@
   KeyShotXR
   (c) Copyright 2012-2017 Luxion ApS - All Rights Reserved.
 -->
-
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
   <head>
@@ -13,14 +12,20 @@
     <style type="text/css">
       body { -ms-touch-action: none; }
     </style>
-    <!-- change script path -->
-<script type="text/javascript" src="emerald-xr/files/KeyShotXR.js"></script>
 
+    <!-- Load the viewer script from your XR folder -->
+    <script type="text/javascript" src="Emeral XR.1/files/KeyShotXR.js"></script>
+
+    <!-- KeyShotXR configuration -->
+    <script type="text/javascript">
       var keyshotXR;
 
       function initKeyShotXR() {
         var nameOfDiv = "KeyShotXR";
+
+        /* IMPORTANT: this is the folder that contains your frames + ks_logo.png + files/ */
         var folderName = "Emeral XR.1";
+
         var viewPortWidth = 1024;
         var viewPortHeight = 1024;
         var backgroundColor = "#000000";
@@ -40,14 +45,24 @@
         var downloadOnInteraction = false;
         var imageExtension = "jpg";
         var showLoading = true;
-        var loadingIcon = "ks_logo.png"; // Set to empty string for default icon.
+
+        /* Use default loader (empty string) or point to the icon inside your folder */
+        var loadingIcon = ""; // or "Emeral XR.1/ks_logo.png"
+
         var allowFullscreen = true; // Double-click in desktop browsers for fullscreen.
         var uReverse = false;
         var vReverse = false;
         var hotspots = {};
         var isIBooksWidget = false;
-        
-        keyshotXR = new keyshotXR(nameOfDiv,folderName,viewPortWidth,viewPortHeight,backgroundColor,uCount,vCount,uWrap,vWrap,uMouseSensitivity,vMouseSensitivity,uStartIndex,vStartIndex,minZoom,maxZoom,rotationDamping,downScaleToBrowser,addDownScaleGUIButton,downloadOnInteraction,imageExtension,showLoading,loadingIcon,allowFullscreen,uReverse,vReverse,hotspots,isIBooksWidget);
+
+        keyshotXR = new keyshotXR(
+          nameOfDiv, folderName, viewPortWidth, viewPortHeight, backgroundColor,
+          uCount, vCount, uWrap, vWrap, uMouseSensitivity, vMouseSensitivity,
+          uStartIndex, vStartIndex, minZoom, maxZoom, rotationDamping,
+          downScaleToBrowser, addDownScaleGUIButton, downloadOnInteraction,
+          imageExtension, showLoading, loadingIcon, allowFullscreen,
+          uReverse, vReverse, hotspots, isIBooksWidget
+        );
       }
 
       window.onload = initKeyShotXR;
