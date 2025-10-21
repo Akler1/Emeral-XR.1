@@ -3,32 +3,30 @@
   (c) Copyright 2012-2017 Luxion ApS - All Rights Reserved.
 -->
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml'>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>KeyShotXR</title>
-    <style type="text/css">
-      body { -ms-touch-action: none; }
-    </style>
+    <style>body { margin:0; -ms-touch-action:none; }</style>
 
     <!-- Load the viewer script from your XR folder -->
-    <script type="text/javascript" src="Emeral XR.1/files/KeyShotXR.js"></script>
+    <script src="Emeral XR.1/files/KeyShotXR.js"></script>
 
     <!-- KeyShotXR configuration -->
-    <script type="text/javascript">
+    <script>
       var keyshotXR;
 
       function initKeyShotXR() {
         var nameOfDiv = "KeyShotXR";
 
-        /* IMPORTANT: this is the folder that contains your frames + ks_logo.png + files/ */
+        /* This MUST match the folder that contains your frames + ks_logo.png + files/ */
         var folderName = "Emeral XR.1";
 
         var viewPortWidth = 1024;
         var viewPortHeight = 1024;
-        var backgroundColor = "#000000";
+        var backgroundColor = "#000000";   // change to "#ffffff" if you want white
         var uCount = 30;
         var vCount = 15;
         var uWrap = true;
@@ -38,7 +36,7 @@
         var uStartIndex = 15;
         var vStartIndex = 8;
         var minZoom = 1;
-        var maxZoom = 1;
+        var maxZoom = 1;                   // set to 1.5 to enable zoom
         var rotationDamping = 0.96;
         var downScaleToBrowser = true;
         var addDownScaleGUIButton = false;
@@ -49,7 +47,7 @@
         /* Use default loader (empty string) or point to the icon inside your folder */
         var loadingIcon = ""; // or "Emeral XR.1/ks_logo.png"
 
-        var allowFullscreen = true; // Double-click in desktop browsers for fullscreen.
+        var allowFullscreen = true; // double-click for fullscreen on desktop
         var uReverse = false;
         var vReverse = false;
         var hotspots = {};
